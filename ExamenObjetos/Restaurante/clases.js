@@ -1,44 +1,42 @@
-class Plato {
-    constructor(nombre, precio){
-    this.nombre = nombre,
-    this.precio = precio
-    }
-}
-
-class Menu{
-    constructor(){
-        this.platos= []
+class Habitacion{
+    constructor(numHabitacion){
+        this.numHabitacion = numHabitacion
+        this.tipo = ["simple","doble","suite"]
+        this.disponibilidad = ["disponible", "ocupado"]
     }
     mostrar(){
-        return this.nombre + this.precio;
-    }
-    listarPlatos(){
-    for (let i = 0; i < this.platos.length; i++) {
-          let lista= platos[i]
-          return lista;
-      }
+        return `Número de habitación: ${this.numHabitacion},
+                Tipo: ${this.tipo},
+                Disponibilidad: ${this.disponibilidad}`
     }
 }
-
-class Pedido{
-    constructor(){
-        this.platos= new Plato(nombre, precio)
+class Hotel{
+    constructor(lista){
+        this.habitaciones = lista
     }
-    agregar(){
+    agregarHabitacion(infonueva){
+        let agregar = this.habitaciones.push(infonueva)
+    }
+    listarHabitaciones(){
+        let lista="";
+        for(i = 0; i> this.habitaciones.length; i++){
+            lista += this.habitaciones[i].mostrar()
+        }
+        return lista
+    }
+    alquilarHabitacion(){
+        
+    }
+    disponibles(){
+        let lista="";
+        for(i = 0; i> this.habitaciones.length; i++){
+            let habitacion = this.habitaciones[i]
+            if(habitacion.tipo == "disponible"){
+                lista += habitacion
+            }
+        }
+        return lista
 
     }
-
+    
 }
-class Restaurante{
-    constructor(){
-        this.Pedid
-    }
-}
-
-
-document.querySelector('#listar').addEventListener('click',()=>{
-    Menu.listarPlatos();
-    let lista = document.querySelector('#platos');
-    let item = document.createElement('li')
-    item.innerHTML = ""
-})
